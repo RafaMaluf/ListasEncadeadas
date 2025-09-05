@@ -44,6 +44,9 @@ public class Pilha{
             anterior = atual;
             atual = atual.getProximo();
         }
+
+        System.out.print("removido = " + atual.getInformacao() +"\n");
         anterior.setProximo(null);
+
     }
 }

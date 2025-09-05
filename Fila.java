@@ -41,6 +41,7 @@ public class Fila{
         Node prox = atual.getProximo();
 
         Fila = prox;
+        System.out.print("removido = " + atual.getInformacao() +"\n");
     }
 
     public Integer primeiro(){

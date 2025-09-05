@@ -8,6 +8,7 @@ public class Main {
         3 é o merge entre 2 filas
 
         pode adicionar .insere(numero), .remove() e . imprime() pra pilha e fila
+
         */
 
         // 1) pilha
@@ -21,11 +22,9 @@ public class Main {
         pilha.imprime();
 
         pilha.remove();
-        System.out.println("pilha apos remover 1 :");
         pilha.imprime();
 
         pilha.remove();
-        System.out.println("pilha apos remover 1 :");
         pilha.imprime();
         System.out.println("fim pilha");
 
@@ -37,21 +36,18 @@ public class Main {
         fila.insere(4);
         fila.insere(6);
         fila.insere(8);
-        System.out.println("fila apos inserir:");
         fila.imprime();
 
         fila.remove();
-        System.out.println("fila apos remover 1 :");
         fila.imprime();
 
         fila.remove();
-        System.out.println("fila apos remover 1:");
         fila.imprime();
         System.out.println("fim fila");
 
 
-        // 3) merge de duas filas
-        System.out.println("começo merge");
+        // 3.1) merge de duas filas encadeadas
+        System.out.println("começo merge (lista encadeada)");
         Fila A = new Fila();
         A.insere(1);
         A.insere(3);
@@ -73,12 +69,29 @@ public class Main {
         Merge m = new Merge();
         Fila C = m.merge(A, B);
 
-        System.out.println("fila A apos merge (esvaziamos):");
-        A.imprime();
-        System.out.println("fila B apos merge (esvaziamos):");
-        B.imprime();
         System.out.println("fila C (A+B):");
         C.imprime();
-        System.out.println("fim merge");
+        System.out.println("fim merge (lista encadeada)");
+
+
+        // 3.2) merge dois vetores
+        System.out.println("começo merge (vetores)");
+        int[] vetA = {1, 3, 5, 7, 9};
+        int[] vetB = {2, 4, 6, 8};
+
+        MergeVetor merge_vetor = new MergeVetor();
+        int[] vetC = merge_vetor.merge(vetA, vetA.length, vetB, vetB.length);
+
+        System.out.println("vetor A:");
+        for (int x : vetA) System.out.print(x + " -> ");
+        System.out.println("Null");
+
+        System.out.println("vetor B:");
+        for (int x : vetB) System.out.print(x + " -> ");
+        System.out.println("Null");
+
+        System.out.println("vetor C (A+B):");
+        merge_vetor.imprime();
+        System.out.println("fim merge (vetores)");
     }
 }
