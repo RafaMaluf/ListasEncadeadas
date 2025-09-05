@@ -13,18 +13,26 @@ public class MergeVetor {
 
         while (i < tamA && j < tamB) {
             if (A[i] <= B[j]) {
-                C[tamanhoC++] = A[i++];
+                C[tamanhoC] = A[i];
+                tamanhoC++;
+                i++;
             } else {
-                C[tamanhoC++] = B[j++];
+                C[tamanhoC] = B[j];
+                tamanhoC++;
+                j++;
             }
         }
 
         while (i < tamA) {
-            C[tamanhoC++] = A[i++];
+            C[tamanhoC] = A[i];
+            tamanhoC++;
+            i++;
         }
 
         while (j < tamB) {
-            C[tamanhoC++] = B[j++];
+            C[tamanhoC] = B[j];
+            tamanhoC++;
+            j++;
         }
 
         return C;
@@ -37,3 +45,4 @@ public class MergeVetor {
         System.out.println("Null");
     }
 }
+
